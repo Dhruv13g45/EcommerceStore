@@ -27,7 +27,7 @@ const OrderHistory = () => {
         <div className='w-full p-3 mt-10'>
             {
                 orderHistory.length > 0 ?
-                    <div className='w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5' key={orderHistory.productId}>
+                    <div className='w-full grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5' key={orderHistory.productId}>
                         {
                             orderHistory.map((order) => (
                                 <div key={order.productId} className='flex flex-col justify-between items-center p-5 rounded-xl shadow-2xl'>
@@ -44,7 +44,7 @@ const OrderHistory = () => {
                     </div>
                     :
                     <div className='w-full flex flex-col justify-center items-center mt-14'>
-                        <h1 className='text-center text-2xl '>Common... Order Something!!</h1>
+                        {/* <h1 className='text-center text-2xl '>Come on... Order Something!!</h1> */}
                         <img src={OrderHistoryImage} alt="order History photo" className='rounded-xl h-[300px] w-[300px] mt-5' />
                     </div>
             }

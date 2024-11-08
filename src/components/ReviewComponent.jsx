@@ -40,9 +40,9 @@ const ReviewComponent = ({ singleProductId }) => {
                                 {review.reviewProductId == singleProductId ?
 
 
-                                    <div className='flex justify-start items-center gap-5 mx-3 my-5 rounded-xl shadow-xl p-3'>
-                                        <img src={Avatar} alt="avatar photo" className=' rounded-[50%] w-[70px]' />
-                                        Review : <p className='lg:font-bold text-md lg:text-lg'>{review.review}</p>
+                                    <div className='flex flex-col sm:flex-row justify-start items-center gap-5 mx-3 my-5 rounded-xl shadow-xl p-3'>
+                                        <img src={Avatar} alt="avatar photo" className=' rounded-[50%] w-[30px] sm:w-[70px]' />
+                                        <p className='lg:font-bold text-md lg:text-lg '>Review :{review.review}</p>
                                     </div>
 
                                     :
