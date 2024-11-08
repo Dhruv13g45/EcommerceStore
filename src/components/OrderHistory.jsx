@@ -3,18 +3,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { retriveOrderHistory, removeOrderHistory } from '../redux/slices/cartSlice'
 import OrderHistoryImage from "../assets/OrderHistoryImage.png"
 import toast, { Toaster } from 'react-hot-toast';
+import {useNavigate} from 'react-router-dom'
 
 const OrderHistory = () => {
 
     const dispatchLocalStorage = useDispatch()
     const orderHistory = useSelector((state) => state.cart.orderHistory)
-    console.log(orderHistory)
+    const navigate = useNavigate()
     const allProductsRemoved = () => toast('Products removed from order history.');
 
     const removeLocalStorage = () => {
         dispatchLocalStorage(removeOrderHistory())
         allProductsRemoved()
-        location.reload()
+        navigate(0);
     }
 
     useEffect(() => {
