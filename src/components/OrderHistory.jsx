@@ -8,7 +8,6 @@ const OrderHistory = () => {
 
     const dispatchLocalStorage = useDispatch()
     const orderHistory = useSelector((state) => state.cart.orderHistory)
-    const navigate = useNavigate()
     const allProductsRemoved = () => toast('Products removed from order history.');
 
     const removeLocalStorage = (event) => {
