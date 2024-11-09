@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { retriveOrderHistory, removeOrderHistory } from '../redux/slices/cartSlice'
 import OrderHistoryImage from "../assets/OrderHistoryImage.png"
 import toast, { Toaster } from 'react-hot-toast';
-import {useNavigate} from 'react-router-dom'
 
 const OrderHistory = () => {
 
@@ -12,10 +11,11 @@ const OrderHistory = () => {
     const navigate = useNavigate()
     const allProductsRemoved = () => toast('Products removed from order history.');
 
-    const removeLocalStorage = () => {
+    const removeLocalStorage = (event) => {
+        event.preventDefault();
         dispatchLocalStorage(removeOrderHistory())
         allProductsRemoved()
-        navigate(0);
+        
     }
 
     useEffect(() => {
@@ -56,7 +56,7 @@ const OrderHistory = () => {
                     <div className='w-full text-right p-3'>
                         <button
                             className='text-lg w-auto mt-3 font-bold p-3 hover:border-[3px] bg-black text-white hover:border-black rounded-md hover:bg-white hover:text-black duration-150'
-                            onClick={() => removeLocalStorage()}
+                            onClick={() => removeLocalStorage(event)}
                         >Clear Order History</button>
                     </div>
                     :
