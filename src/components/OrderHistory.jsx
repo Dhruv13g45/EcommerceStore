@@ -21,7 +21,12 @@ const OrderHistory = () => {
         dispatchLocalStorage(retriveOrderHistory())
     }, [])
 
-
+    // just for debugging purpose
+     useEffect(() => {
+        if (orderHistory.length === 0) {
+            console.log("Order history cleared");
+        }
+    }, [orderHistory]);
 
     return (
         <div className='w-full p-3 mt-10'>
