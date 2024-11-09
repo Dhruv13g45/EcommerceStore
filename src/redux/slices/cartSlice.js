@@ -53,7 +53,10 @@ const cartSlice = createSlice({
         },
         removeOrderHistory: (state) => {
             localStorage.removeItem('orderHistory')
-            state.cartItems = []
+            return {
+                ...state,
+                orderHistory: [],
+            };
         }
     },
 })
